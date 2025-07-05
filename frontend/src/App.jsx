@@ -11,7 +11,7 @@ export default function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const response = await fetch("http://localhost:5000/business-data", {
+    const response = await fetch("http://localhost:5050/business-data", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
@@ -23,7 +23,7 @@ export default function App() {
 
   const regenerateHeadline = async () => {
     const response = await fetch(
-      `http://localhost:5000/regenerate-headline?name=${formData.name}&location=${formData.location}`
+      `http://localhost:5050/regenerate-headline?name=${formData.name}&location=${formData.location}`
     );
     const data = await response.json();
     setBusinessData((prev) => ({ ...prev, headline: data.headline }));

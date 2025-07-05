@@ -5,7 +5,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const PORT = 5000;
+const PORT = 5050;
+
+app.get("/", (req, res) => {
+  res.send("Backend is running 👨‍💻");
+});
 
 // POST /business-data
 app.post("/business-data", (req, res) => {
